@@ -1,0 +1,279 @@
+@font-face {
+    font-family: Oswald;
+    src: url('Oswald/Oswald-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: Jost;
+    /* src: url('Jost/Jost-VariableFont_wght.ttf'); */
+    src: url('Jost/Jost-Italic-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: Bebas;
+    /* src: url('Jost/Jost-VariableFont_wght.ttf'); */
+    src: url('Bebas_Neue/BebasNeue-Regular.ttf');
+}
+@font-face {
+    font-family: Gasoek_One;
+    src: url('Gasoek_One/GasoekOne-Regular.ttf');
+}
+@font-face {
+    font-family: Lobster;
+    /* src: url('Jost/Jost-VariableFont_wght.ttf'); */
+    src: url('Lobster/Lobster-Regular.ttf');    
+}
+body {
+    margin: 0;
+}
+#Whole {
+    width: 100%;
+    height: 240ch;
+    background-color: white;
+    /* background-image: url('paint_background.jpeg'); */
+    
+}
+#UpBar {
+    position: fixed;
+    background-color: rgb(57, 57, 57);
+    background-color: white;
+    width: 100%;    
+    height: 8ch;
+    text-align: left;
+    /* background-color: aquamarine; */
+}
+#UpBar-logo-1 {
+    margin-left: 4ch;
+    align-items: center;
+    display: flex;
+    /* margin-left: auto; */
+    margin-right: 0;
+    /* display: block; */
+    height: 100%;
+    float:left
+    
+}
+#Center {
+    width: 100%;
+    height: 92ch;
+    background-color: rgb(255, 255, 255);
+    font-family: Oswald;
+}
+#Project1 {
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: #ff5b74;
+    float: left;
+    display: flex;
+    align-items: center;
+    -webkit-transition : height 1s;
+    transition: 7.5vh;
+}
+#Project1:hover {
+    height: calc(100% + 5ch);
+}
+
+#Project2 {
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: rgb(97, 255, 218);
+    float: left;
+    display: flex;
+    align-items: center;
+    -webkit-transition: height 1s;
+    transition: 7.5vh;
+}
+#Project2:hover {
+    height: calc(100% + 5ch);
+}
+#Project3 {
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: rgb(67, 170, 255);
+    display: flex;
+    align-items: center;
+    float: left;
+    -webkit-transition: height 1s;
+    transition: 7.5vh;
+}
+#Project3:hover {
+    height: calc(100% + 5ch);
+}
+
+.main-heading-2 {
+    width: auto;
+    max-width: 18ch;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 5px;
+    font-family: Oswald,sans-serif;
+    font-size: 6.5vh;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    -webkit-transition: font-size 1s ;
+    transition: 7.5vh;
+}
+.main-heading-2:hover {
+    font-size: 7.5vh
+}
+.logo-1 {
+    color: #242d2c;
+    text-align: left;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    /* border-left: 1px solid #242d2c;
+    margin-left: 24px;
+    padding-top: 0;
+    /* padding-bottom: 0;
+    padding-left: 16px; */
+    font-family: Bebas,sans-serif;
+    font-size: 5vh;
+    font-weight: 500;
+    line-height: 16px;
+}
+.logo-description {
+    color: #242d2c;
+    text-align: left;
+    /* letter-spacing: 2.2px; */
+    text-transform: uppercase;
+    /* border-left: 1px solid #242d2c;
+    margin-left: 24px;
+    padding-top: 0;
+    /* padding-bottom: 0;
+    padding-left: 16px; */
+    font-family: Jost,sans-serif;
+    font-size: 10px;
+    /* font-weight: 500; */
+    line-height: 16px;
+    margin-left: 10px;
+}
+
+#Graph_img {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#Game_img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#Robot_img {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#explanation_us {   
+    width: 100%;
+    height: 70vh ;
+    background-color: rgb(255, 255, 255)  ;
+    text-align: left;
+    letter-spacing: -.0375em;
+    padding-right: 0;
+ 
+    
+    
+    
+
+}
+
+#EX_US_TEXT {
+    width: 80%;
+    height: 80%;
+    padding: 10%;
+}
+#about_us_text1 {
+    font-family: Jost,sans-serif;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    -webkit-text-fill-color: transparent;
+    background-image: url("rainbowmusic.jpg");
+    background-size:cover;
+    background-position: 50%;
+    -webkit-background-clip: text;
+}
+
+#about_us_text2 {
+    font-family: Jost,sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#person1 {
+    width: calc(100% / 2);
+    height: 100%;
+    background-color: #ffffff;
+    float: left;
+    display: flex;
+    align-items: center;
+    -webkit-transition : height 1s;
+   
+
+}
+#person2 {
+    width: calc(100% / 2);
+    height: 100%;
+    background-color: #ffffff;
+    float: left;
+    display: flex;
+    align-items: center;
+    -webkit-transition : height 1s;
+    transition: 7.5vh;
+}
+#person_inform{
+    width: 100%;
+    height: 97ch;
+    background-color: rgb(255, 255, 255);
+    font-family: Oswald;
+    
+    
+   
+}
+#explanation_person{
+    width: 700px;
+    height: 700px;
+    margin: auto;
+    background-color: rgb(209, 209, 209);
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px 5px #2e3837;
+    background-image: url("computer.jpg");   
+
+
+}
+#person_name{
+    font-family: Gasoek_One;
+    font-weight: 100;
+    font-size: 70px;
+    margin-left: 250px;
+    color: white;
+   
+
+}
+#person_explanation{
+    font-family: Jost;
+    font-weight: 500;
+    font-size: 25px;
+    margin: 30px;
+    color: white;
+
+    
+}
+
+
+#person_icon{
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top : auto;
+    filter: opacity(0.5) drop-shadow(0 0 0 #ffffff);
+}
+

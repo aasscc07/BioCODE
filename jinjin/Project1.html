@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            width: 80%;
+            max-width: 800px;
+        }
+        canvas {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Rate</h1>
+        <canvas id="heartRateChart"></canvas>
+    </div>
+    <div class="container">
+        <h1>CO2 Concentration</h1>
+        <canvas id="co2Chart"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        async function fetchData() {
+            const response = await fetch('data.txt');
+            const data = await response.text();
+            const rows = data.trim().split('\n');
+            const heartRates = [];
+            const co2Concentrations = [];
+
+            rows.forEach(row => {
+                const [heartRate, co2] = row.split(/\s+/);
+                heartRates.push(parseFloat(heartRate));
+                co2Concentrations.push(parseFloat(co2));
+            });
+
+            return { heartRates, co2Concentrations };
+        }
+
+        async function renderCharts() {
+            const { heartRates, co2Concentrations } = await fetchData();
+
+            const labels = Array.from({ length: heartRates.length }, (_, i) => i + 1);
+
+            // Heart Rate Chart
+            const heartRateCtx = document.getElementById('heartRateChart').getContext('2d');
+            new Chart(heartRateCtx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Heart Rate',
+                        data: heartRates,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderWidth: 1,
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Index'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Heart Rate'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // CO2 Concentration Chart
+            const co2Ctx = document.getElementById('co2Chart').getContext('2d');
+            new Chart(co2Ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'CO2 Concentration',
+                        data: co2Concentrations,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderWidth: 1,
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Index'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'CO2 Concentration'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        renderCharts();
+    </script>
+</body>
+</html>
